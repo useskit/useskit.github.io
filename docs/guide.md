@@ -9,14 +9,6 @@
 #### 组件列表
    * KitJS
    * KitRouter
+  
 
-### NodeJS 组件
-* 快速构后端API
-* 自动生成路由
-* 自动生成`create`, `read`, `update`, `delete`, `info`, `list`, `list-page`常用操作
-#### 组件列表
-   * eslint-config
-   * Midway-crud
-   * midway-qiniu
-   * midway-casbin
-   * midway-log2db
+?> 文档更新时间: {docsify-updated}
