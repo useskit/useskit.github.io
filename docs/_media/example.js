@@ -45,6 +45,5 @@ $('p#p2', rootElm);
 var rootElm = document.createElement('div');
 rootElm.id = 'rootElm';
 rootElm.innerHTML = '<p id="p1" name="n1" class="nav">p1</p><p id="p2" class="nav warn">p2</p>'
-console.log(rootElm.outerHTML);
 $('p.nav', rootElm);
 /// [comb2]
