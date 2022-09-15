@@ -73,15 +73,14 @@
             markdown: {
                 renderer: {
                     code: function(code, lang) {
-                        console.log(code, lang);
                         var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
                         var result = eval(code);
-                        console.log(result);
-                        var tmpNode = document.createElement("div");
-                        tmpNode.appendChild(result[0])
-                        console.log(tmpNode);
+                        var out = '';
+                        for (var i = 0; i < result.length; i++) {
+                            out += result[i].outerHTML + '&#10;';
+                        };
                         var code_template = '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>'
-                        var output = `<output data-lang="output" data-isvue="">${tmpNode.innerHTML}</output>`
+                        var output = `<output data-lang="output"><code class="lang-html">${out.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></output>`
                         return code_template + output;
                     }
                 }
@@ -93,7 +92,7 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
-    <script src="https://unpkg.com/@useskit/js@0.0.4/dist/kitjs.umd.min.js"></script>
+    <script src="https://unpkg.com/@useskit/js@0.0.6/dist/kitjs.umd.min.js"></script>
 </body>
 
 </html>
